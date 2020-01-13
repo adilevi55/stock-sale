@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { LogingComponent } from './components/loging/loging.component';
 import { RegisterModule } from './register/module/register/register.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { ShearModule } from './shear.modul';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     RegisterModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ShearModule
   ],
   providers: [],
   bootstrap: [AppComponent]

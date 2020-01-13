@@ -1,1 +1,27 @@
-<p>loging works!</p>
+<form #formInfo="ngForm">
+
+    <mat-form-field>
+      <input matInput class="input-field" required 
+      #userNameInfo="ngModel" [(ngModel)]="user.userName" name="userName" 
+      type="text"  placeholder="User Name">
+  
+    <mat-error *ngIf="userNameInfo.errors?.required && userNameInfo.touched">
+       User Name Missing</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput class="input-field" required 
+      #passwordInfo="ngModel" [(ngModel)]="user.password" name="password" 
+      type="password"  placeholder="Password">
+  
+    <mat-error *ngIf="passwordInfo.errors?.required && passwordInfo.touched">
+        Password Missing</mat-error>
+    </mat-form-field>
+
+      <button mat-raised-button 
+      [disabled]="formInfo.form.invalid" (click)="userSubmitLoginForm()">
+        Login
+      </button>
+ 
+  </form>
+  <a routerLink="/register">register</a>
