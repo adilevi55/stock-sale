@@ -4,19 +4,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogingComponent } from './components/loging/loging.component';
 import { RegisterModule } from './register/module/register/register.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { AngualrMaterialModule } from './angular-material.module';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
-    AppComponent,
-    LogingComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RegisterModule,
-    BrowserAnimationsModule
+    CommonModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [FormsModule, AngualrMaterialModule]
 })
-export class AppModule { }
+export class ShearModule { }
