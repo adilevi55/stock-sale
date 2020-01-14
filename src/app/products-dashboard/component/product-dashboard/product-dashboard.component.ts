@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-
 @Component({
   selector: 'app-product-dashboard',
   templateUrl: './product-dashboard.component.html',
@@ -8,11 +6,9 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class ProductDashboardComponent implements OnInit {
 
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor() { }
 
   ngOnInit() {
   }
-  loguot(){
-      this.authenticationService.loguot();
-  }
+
 }
