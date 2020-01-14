@@ -4,6 +4,7 @@ import { ProductDashboardComponent } from '../component/product-dashboard/produc
 import { ShearModule } from 'src/app/shear.modul';
 import { ProductsDashboardRoutingModule } from './products-dashboard-routing.module';
 import { ProductsDashboardNavbarModule } from '../products-dashboard-navbar/module/products-dashboard-navbar.module';
+import { ProductsDashboardAllProductsModule } from '../products-dashboard-all-products/module/products-dashboard-all-products.module';
 
 
 
@@ -13,7 +14,8 @@ import { ProductsDashboardNavbarModule } from '../products-dashboard-navbar/modu
     CommonModule,
     ShearModule,
     ProductsDashboardRoutingModule,
-    ProductsDashboardNavbarModule
+    ProductsDashboardNavbarModule,
+    ProductsDashboardAllProductsModule
   ],
   exports: [ProductDashboardComponent, ProductsDashboardRoutingModule]
 })
