@@ -7,6 +7,7 @@ import { RegisterModule } from './register/module/register/register.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ShearModule } from './shear.modul';
+import { ProductsDashboardModule } from './products-dashboard/module/products-dashboard.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { ShearModule } from './shear.modul';
     RegisterModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ShearModule
+    ShearModule,
+    ProductsDashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
