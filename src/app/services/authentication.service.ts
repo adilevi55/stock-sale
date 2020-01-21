@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { User } from '../modals/user';
 import { AuthGuardService } from '../services/auth-guard';
 import { Router } from '@angular/router';

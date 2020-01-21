@@ -1,1 +1,11 @@
-<p>product-dashboard-all-products works!</p>
+<div *ngIf="products$">
+    <div *ngFor="let p of products$|async">
+        {{p.name}}
+        {{p.location}}
+        {{p.quantities}}
+        {{p.user.name}}
+        <img src="{{p.img.url}}" width="100px">
+        {{p.img.name}}
+    </div>
+</div>
+<p>sdfasdf</p>
