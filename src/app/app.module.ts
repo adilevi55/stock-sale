@@ -5,14 +5,18 @@ import { AppComponent } from './app.component';
 import { LogingComponent } from './components/loging/loging.component';
 import { RegisterModule } from './register/module/register/register.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShearModule } from './shear.modul';
 import { ProductsDashboardModule } from './products-dashboard/module/products-dashboard.module';
+import { MassageComponent } from './massage/massage.component';
+import { HttpErrorInteceptor } from './error.inteceptor';
 @NgModule({
   declarations: [
     AppComponent,
-    LogingComponent
+    LogingComponent,
+    MassageComponent
   ],
+  entryComponents: [MassageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,7 +26,10 @@ import { ProductsDashboardModule } from './products-dashboard/module/products-da
     ShearModule,
     ProductsDashboardModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInteceptor, multi: true }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

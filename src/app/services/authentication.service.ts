@@ -23,9 +23,6 @@ export class AuthenticationService {
                 this.authGuardService.userSingIn();
                 alert('Register Success!');
                 this.route.navigate(['/products-dashboard']);
-            }, err => {
-                console.log(err.error.message);
-                alert(err.error.message);
             });
     }
     login(user: User) {
@@ -35,14 +32,10 @@ export class AuthenticationService {
                 this.authGuardService.userSingIn();
                 alert('Login Success!');
                 this.route.navigate(['/products-dashboard']);
-            }, err => {
-                console.log(err.error.message);
-                alert(err.error.message);
             });
     }
     loguot() {
         this.authGuardService.userLogout();
         this.route.navigate(['/login']);
-
     }
 }
