@@ -1,4 +1,5 @@
 import { User } from './user';
+import { Category } from './category';
 
 export class Product {
     constructor(
@@ -11,6 +12,7 @@ export class Product {
             url: string,
             name: string,
             imgId: string,
-        }
+        },
+        public category?: Category
     ) { }
 }

@@ -22,9 +22,16 @@ export class HttpErrorInteceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
+        let err: object|string;
+        if (error.status === 409) {
+          err = error.error.message;
+        } else {
+          err = error.message;
+
+        }
         const dialogRef = this.dialog.open(MassageComponent, {
           width: '33rem',
-          data: {error: error.error.message}
+          data: {error: err}
         });
         return throwError(error);
       })
