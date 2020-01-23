@@ -2,19 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LogingComponent } from './components/loging/loging.component';
+import { LogingComponent } from './loging/loging.component';
 import { RegisterModule } from './register/module/register/register.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShearModule } from './shear.modul';
-import { ProductsDashboardModule } from './products-dashboard/module/products-dashboard.module';
 import { MassageComponent } from './massage/massage.component';
 import { HttpErrorInteceptor } from './error.inteceptor';
+import { ProductsModule } from './products/module/products.module';
+import { RouterModule } from '@angular/router';
+import { HeaderNavBarModule } from './header-nav-bar/module/module.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
     LogingComponent,
-    MassageComponent
+    MassageComponent,
+    PageNotFoundComponent
   ],
   entryComponents: [MassageComponent],
   imports: [
@@ -24,7 +28,9 @@ import { HttpErrorInteceptor } from './error.inteceptor';
     BrowserAnimationsModule,
     HttpClientModule,
     ShearModule,
-    ProductsDashboardModule
+    ProductsModule,
+    RouterModule,
+    HeaderNavBarModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInteceptor, multi: true }

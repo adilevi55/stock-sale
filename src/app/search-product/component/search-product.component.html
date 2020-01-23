@@ -1,1 +1,21 @@
 <p>search product works!</p>
+<form #formInfo="ngForm">
+    <mat-form-field>
+        <input matInput class="input-field" required 
+        #searchValueInfo="ngModel" [(ngModel)]="searchValue" name="searchValue" 
+        type="text"  placeholder="search product">
+    
+      <mat-error *ngIf="searchValueInfo.errors?.required && searchValueInfo.touched">
+        Search Value Missing</mat-error>
+      </mat-form-field>
+
+      <mat-radio-group [(ngModel)]="searchFiled" name="searchFiled" required>
+        <mat-radio-button class="example-margin" value="name">Name</mat-radio-button>
+        <mat-radio-button class="example-margin" value="location">Location</mat-radio-button>
+      </mat-radio-group>
+
+    <button mat-raised-button 
+    [disabled]="formInfo.form.invalid" (click)="searchProduct()">
+      Search
+    </button>
+</form>
