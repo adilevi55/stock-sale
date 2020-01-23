@@ -20,4 +20,7 @@ export class ProductsService {
   getProductBySearch(filed: string , searchValue: string): Observable<Product[]> {
     return this.http.get<Product[]>(`https://test-node-app0.herokuapp.com/api/product/search/${filed}/${searchValue}`);
   }
+  getAllUserProduts(userId: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`https://test-node-app0.herokuapp.com/api/product/user/${userId}`);
+  }
 }

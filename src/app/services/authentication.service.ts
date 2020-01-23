@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../modals/user';
 import { AuthGuardService } from './auth-guard.service';
 import { Router } from '@angular/router';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -15,8 +15,8 @@ export class AuthenticationService {
         private authGuardService: AuthGuardService,
         private route: Router
         ) { }
-        public user$: Subject<User> = new Subject();
-
+        public user$: BehaviorSubject<User> = new BehaviorSubject({});
+        public user: User;
     getUser(): Observable<User> {
         return this.user$;
     }
@@ -26,6 +26,7 @@ export class AuthenticationService {
             .subscribe(newUser => {
                 console.log(newUser);
                 this.user$.next(newUser);
+                this.user = newUser;
                 this.authGuardService.userSingIn();
                 alert('Register Success!');
                 this.route.navigate(['/products/all-products']);
@@ -36,6 +37,7 @@ export class AuthenticationService {
             .subscribe(newUser => {
                 console.log(newUser);
                 this.user$.next(newUser);
+                this.user = newUser;
                 this.authGuardService.userSingIn();
                 alert('Login Success!');
                 this.route.navigate(['/products/all-products']);
