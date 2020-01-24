@@ -9,14 +9,13 @@
     </mat-form-field>
 
 
-    <mat-form-field>
+     <mat-form-field>
         <input matInput   required type="text"  placeholder="Location"
         minlength="6" maxlength="15"
        #locationInfo="ngModel" [(ngModel)]="product.location" name="location">
       <mat-error *ngIf="locationInfo.errors?.required && locationInfo.touched">
         Location Missing</mat-error>
-      </mat-form-field>
-    
+      </mat-form-field>   
 
       <mat-form-field>
         <input matInput   required type="number"  placeholder="Quantities" min="1" 

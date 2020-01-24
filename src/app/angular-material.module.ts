@@ -6,6 +6,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {MatSelectModule} from '@angular/material/select';
       MatDialogModule,
       MatRadioModule,
       MatTabsModule,
-      MatSelectModule
+      MatSelectModule,
+      MatTableModule
     ]
 })
 export class AngualrMaterialModule { }

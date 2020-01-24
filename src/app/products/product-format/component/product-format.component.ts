@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/modals/product';
 
 @Component({
@@ -6,6 +6,6 @@ import { Product } from 'src/app/modals/product';
   templateUrl: './product-format.component.html',
   styleUrls: ['./product-format.component.css']
 })
-export class ProductFormatComponent {
+export class ProductFormatComponent  {
   @Input() products: Product[];
 }

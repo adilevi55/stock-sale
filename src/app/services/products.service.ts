@@ -25,6 +25,9 @@ export class ProductsService {
     return this.http.get<Product[]>(`https://test-node-app0.herokuapp.com/api/product/user/${userId}`);
   }
   addProdut(product: FormData): Observable<Product> {
-    return this.http.post<Product>(`https://test-node-app0.herokuapp.com/api/product/add`, product);
+    return this.http.post<Product>('https://test-node-app0.herokuapp.com/api/product/add', product);
+  }
+  deleteProduct(productId: string): Observable<Product> {
+    return this.http.delete<Product>(`https://test-node-app0.herokuapp.com/api/product/${productId}`);
   }
 }
