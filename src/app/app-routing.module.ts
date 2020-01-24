@@ -15,6 +15,9 @@ const routes: Routes = [
   {path: 'user/products', loadChildren: () => import('./user-products/module/user-products.module')
   .then(m => m.UserProductsModule), canActivate: [AuthGuardService]
   },
+  {path: 'user/add-product', loadChildren: () => import('./user-add-product/module/user-add-product.module')
+  .then(m => m.UserAddProductModule), canActivate: [AuthGuardService]
+  },
   { path: '**', component: PageNotFoundComponent }
 
 ];

@@ -2,5 +2,6 @@
   <nav mat-tab-nav-bar *ngIf="isUserLogin$|async">
     <a mat-tab-link (click)="logout()">Logout</a>
     <a mat-tab-link routerLink='/user/products'>User Products</a>
+    <a mat-tab-link routerLink='/user/add-product'>User Add Products</a>
   <span *ngIf="user">{{user.userName}}</span>
   </nav>

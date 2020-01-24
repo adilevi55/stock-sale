@@ -13,6 +13,7 @@ import { ProductsModule } from './products/module/products.module';
 import { RouterModule } from '@angular/router';
 import { HeaderNavBarModule } from './header-nav-bar/module/module.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserAddProductModule } from './user-add-product/module/user-add-product.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ShearModule,
     ProductsModule,
     RouterModule,
-    HeaderNavBarModule
+    HeaderNavBarModule,
+    UserAddProductModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInteceptor, multi: true }

@@ -5,6 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {MatTabsModule} from '@angular/material/tabs';
       MatFormFieldModule,
       MatDialogModule,
       MatRadioModule,
-      MatTabsModule
+      MatTabsModule,
+      MatSelectModule
     ]
 })
 export class AngualrMaterialModule { }
