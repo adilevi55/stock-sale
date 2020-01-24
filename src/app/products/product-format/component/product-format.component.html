@@ -1,8 +1,9 @@
     <div *ngFor="let p of products">
-    <p>{{p.name}}</p>
-    <p>{{p.location}}</p>
-    <p>{{p.quantities}}</p>
-    <p>{{p.user.userName}}</p>
+    <p>Product Name: {{p.name}}</p>
+    <p>Location: {{p.location}}</p>
+    <p>Quantities: {{p.quantities}}</p>
+    <p>UserName: {{p.user.userName}}</p>
+    <a href="tel:{{p.user.phone}}">call user Phone</a>
     <img src="{{p.img.url}}" width="100px">
-    <p>{{p.category.name}}</p>
+    <p>Category: {{p.category.name}}</p>
     </div>

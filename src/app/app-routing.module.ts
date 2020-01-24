@@ -21,6 +21,9 @@ const routes: Routes = [
   {path: 'user/delete-product', loadChildren: () => import('./delete-product/module/delete-product.module')
   .then(m => m.DeleteProductModule), canActivate: [AuthGuardService]
   },
+  {path: 'user/update-product', loadChildren: () => import('./product-update/module/product-update.module')
+  .then(m => m.ProductUpdateModule), canActivate: [AuthGuardService]
+  },
   { path: '**', component: PageNotFoundComponent }
 
 ];
