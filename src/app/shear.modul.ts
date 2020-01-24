@@ -16,7 +16,6 @@ import { ProductFormatModule } from './products/product-format/module/product-fo
     ProductFormatModule,
     CommonModule,
     ReactiveFormsModule
- 
   ]
 })
 export class ShearModule { }

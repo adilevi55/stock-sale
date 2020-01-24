@@ -21,6 +21,7 @@ export class UserAddProductComponent implements OnInit, OnDestroy {
   public product: Product = new Product();
   public selectedFile: File = null;
   public productFormData: FormData;
+  public productEdd$CheckSubscription = false;
   constructor(
     private authenticationService: AuthenticationService,
     private categoryService: CategoryService,
@@ -43,9 +44,9 @@ export class UserAddProductComponent implements OnInit, OnDestroy {
     this.productFormData.append('category', this.product.category.toString());
 
     this.productEdd$ = this.productService.addProdut(this.productFormData).subscribe(product => {
-      alert(`congratulation ${this.user.userName} your product ${product.name} is successfully uploaded`)
+      this.productEdd$CheckSubscription = true;
+      alert(`congratulation ${this.user.userName} your product ${product.name} is successfully uploaded`);
       this.router.navigate(['user/products']);
-
     });
   }
   onFileSelected(event) {
@@ -53,7 +54,9 @@ export class UserAddProductComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.productEdd$.unsubscribe();
+    if (this.productEdd$CheckSubscription === true) {
+      this.productEdd$.unsubscribe();
+    }
   }
 
 }
