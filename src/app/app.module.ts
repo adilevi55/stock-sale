@@ -13,7 +13,8 @@ import { ProductsModule } from './products/module/products.module';
 import { RouterModule } from '@angular/router';
 import { HeaderNavBarModule } from './header-nav-bar/module/module.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UserAddProductModule } from './user-add-product/module/user-add-product.module';
+import { UserAddProductModule } from './user-product/user-add-product/module/user-add-product.module';
+import { DeleteProductModule } from './user-product/delete-product/module/delete-product.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { UserAddProductModule } from './user-add-product/module/user-add-product
     ProductsModule,
     RouterModule,
     HeaderNavBarModule,
-    UserAddProductModule
+    UserAddProductModule,
+    DeleteProductModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInteceptor, multi: true }
