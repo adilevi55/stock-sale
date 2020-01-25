@@ -15,6 +15,10 @@ export class ProductsService {
   getAllProducts(): Observable<Product[]> {
    return this.http.get<Product[]>('https://test-node-app0.herokuapp.com/api/product/all-products');
   }
+
+  getProductById(productId: string): Observable<Product> {
+   return this.http.get<Product>('https://test-node-app0.herokuapp.com/api/product/id/' + productId);
+  }
   getProductsByCategory(category: string): Observable<Product[]> {
   return this.http.get<Product[]>(`https://test-node-app0.herokuapp.com/api/product/category/${category}`);
   }
@@ -26,6 +30,9 @@ export class ProductsService {
   }
   addProdut(product: FormData): Observable<Product> {
     return this.http.post<Product>('https://test-node-app0.herokuapp.com/api/product/add', product);
+  }
+  updateProduct(product: FormData, productId: string): Observable<Product> {
+    return this.http.put<Product>('https://test-node-app0.herokuapp.com/api/product/' + productId, product);
   }
   deleteProduct(productId: string): Observable<Product> {
     return this.http.delete<Product>(`https://test-node-app0.herokuapp.com/api/product/${productId}`);

@@ -4,8 +4,11 @@
       <input matInput   required type="text"  placeholder="Name" 
       minlength="6" maxlength="15"
      #nameInfo="ngModel" [(ngModel)]="product.name" name="name">
-    <mat-error *ngIf="nameInfo.errors?.required && nameInfo.touched">
+    <mat-error class="" *ngIf="nameInfo.errors?.required && nameInfo.touched">
         Product Name Missing</mat-error>
+    <mat-error  *ngIf="nameInfo.errors?.minlength && nameInfo.touched">
+      Product name too short.<br>
+      Product name must be at least 6 characters</mat-error>
     </mat-form-field>
 
 
@@ -15,6 +18,9 @@
        #locationInfo="ngModel" [(ngModel)]="product.location" name="location">
       <mat-error *ngIf="locationInfo.errors?.required && locationInfo.touched">
         Location Missing</mat-error>
+        <mat-error  *ngIf="locationInfo.errors?.minlength && locationInfo.touched">
+          Location too short.<br>
+          Location must be at least 6 characters</mat-error>
       </mat-form-field>   
 
       <mat-form-field>

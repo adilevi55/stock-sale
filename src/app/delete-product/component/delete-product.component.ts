@@ -1,16 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/modals/product';
 import { User } from 'src/app/modals/user';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ProductsService } from 'src/app/services/products.service';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
 
 
 @Component({
