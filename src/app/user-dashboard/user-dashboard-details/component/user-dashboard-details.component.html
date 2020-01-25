@@ -1,0 +1,32 @@
+<form #formInfo="ngForm">
+    
+    <mat-form-field>
+        <input matInput class="input-field"  minlength="3" maxlength="15"
+        #firstNameInfo="ngModel" [(ngModel)]="user.firstName" name="firstName" 
+        type="text"  placeholder="First Name">
+        <mat-error *ngIf="firstNameInfo.errors?.minlength && firstNameInfo.touched">
+            First name too short.<br>
+            First name must be at least 3 characters
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput class="input-field"  minlength="3" maxlength="15"
+        #lastNameInfo="ngModel" [(ngModel)]="user.lastName" name="lastName" 
+        type="text"  placeholder="Last Name">
+        <mat-error *ngIf="lastNameInfo.errors?.minlength && lastNameInfo.touched">
+            Last name too short.<br>
+            Last name must be at least 3 characters
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput class="input-field"  minlength="3" maxlength="15"
+        #phoneInfo="ngModel" [(ngModel)]="user.phone" name="phone" 
+        type="tel"  placeholder="Phone Number">
+    </mat-form-field>
+
+    <button (click)="userUpdateDetails()"
+    [disabled]="formInfo.invalid"
+    >Update User Details</button>
+</form>

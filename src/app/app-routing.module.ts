@@ -21,6 +21,9 @@ const routes: Routes = [
   {path: 'user/delete-product', loadChildren: () => import('./user-product/delete-product/module/delete-product.module')
   .then(m => m.DeleteProductModule), canActivate: [AuthGuardService]
   },
+  {path: 'user/dashboard', loadChildren: () => import('./user-dashboard/module/user-dashboard.module')
+  .then(m => m.UserDashboardModule), canActivate: [AuthGuardService]
+  },
   {path: 'user/update-product', loadChildren: () => import('./user-product/product-update/module/product-update.module')
   .then(m => m.ProductUpdateModule), canActivate: [AuthGuardService]
   },
