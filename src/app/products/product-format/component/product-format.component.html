@@ -1,9 +1,15 @@
+<div *ngIf="products.length > 0; else elseBlock">
     <div *ngFor="let p of products">
-    <p>Product Name: {{p.name}}</p>
-    <p>Location: {{p.location}}</p>
-    <p>Quantities: {{p.quantities}}</p>
-    <p>UserName: {{p.user.userName}}</p>
-    <a href="tel:{{p.user.phone}}">call user Phone</a>
-    <img src="{{p.img.url}}" width="100px">
-    <p>Category: {{p.category.name}}</p>
-    </div>
+        <p>Product Name: {{p.name}}</p>
+        <p>Location: {{p.location}}</p>
+        <p>Quantities: {{p.quantities}}</p>
+        <p>UserName: {{p.user.userName}}</p>
+        <a href="tel:{{p.user.phone}}">call user Phone</a>
+        <img src="{{p.img.url}}" width="100px">
+        <p>Category: {{p.category.name}}</p>
+        </div>
+    
+</div>
+<ng-template #elseBlock>
+    <h1>No Products</h1>
+</ng-template>

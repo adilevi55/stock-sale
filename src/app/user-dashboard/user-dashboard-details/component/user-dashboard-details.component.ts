@@ -34,6 +34,7 @@ export class UserDashboardDetailsComponent implements OnInit, OnDestroy {
     this.userNoPasswordEmail.phone = this.user.phone;
     this.userSub = this.userDetailsService.userUpdateDetails(this.userNoPasswordEmail).subscribe(newUser => {
       this.user = newUser;
+      alert('Hi ' + this.user.userName + " your user details has changed");
       this.cheackUserUpdated = true;
     });
   }
