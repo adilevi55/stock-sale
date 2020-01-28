@@ -1,15 +1,19 @@
-<div *ngIf="products.length > 0; else elseBlock">
-    <div *ngFor="let p of products">
-        <p>Product Name: {{p.name}}</p>
-        <p>Location: {{p.location}}</p>
-        <p>Quantities: {{p.quantities}}</p>
-        <p>UserName: {{p.user.userName}}</p>
-        <a href="tel:{{p.user.phone}}">call user Phone</a>
-        <img src="{{p.img.url}}" width="100px">
-        <p>Category: {{p.category.name}}</p>
-        </div>
-    
+<div *ngIf="products; else productsLodding">
+    <div *ngIf="products.length > 0;else productsNotFound">
+        <div *ngFor="let p of products">
+            <p>Product Name: {{p.name}}</p>
+            <p>Location: {{p.location}}</p>
+            <p>Quantities: {{p.quantities}}</p>
+            <p>UserName: {{p.user.userName}}</p>
+            <a href="tel:{{p.user.phone}}">call user Phone</a>
+            <img src="{{p.img.url}}" width="100px">
+            <p>Category: {{p.category.name}}</p>
+            </div>
+    </div> 
 </div>
-<ng-template #elseBlock>
+<ng-template #productsLodding>
+        <h1>Products Lodding</h1>
+</ng-template>
+<ng-template #productsNotFound>
     <h1>Products No Found</h1>
 </ng-template>

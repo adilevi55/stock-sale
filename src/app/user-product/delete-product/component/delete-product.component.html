@@ -1,5 +1,7 @@
-<table mat-table [dataSource]="products$|async" class="mat-elevation-z8">
-
+<div *ngIf="(products$|async) as products; else productLodding"> 
+  <div *ngIf="products.length > 0; else notFoundMessage">
+ 
+<table mat-table [dataSource]="products" class="mat-elevation-z8">
   <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
@@ -39,3 +41,11 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>
+</div>
+  <ng-template #notFoundMessage >
+    <h1>Products Not Found</h1>
+    </ng-template>
+  <ng-template #productLodding >
+    <h1>Products Lodding</h1>
+    </ng-template>
