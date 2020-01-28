@@ -1,8 +1,12 @@
-<a routerLink="/proudcts/category/Decking">Decking</a> |
-
-<form #formInfo="ngForm">
-
-    <mat-form-field color="warn">
+<div class="background-body"></div>
+<div class="form-container"  fxLayoutAlign="center center"
+>
+<form #formInfo="ngForm" 
+fxLayout.xs="column" fxLayoutAlign="center center"
+fxLayout.gt-xs="row wrap" fxLayoutGap.gt-xs="10px"
+>
+    <h1 fxFlex.gt-xs="100%" class="form-first-h1-register"  fxLayoutAlign.gt-xs="center" >REGISTER</h1>
+    <mat-form-field color="warn" fxFlex.gt-xs="40%">
       <input matInput class="input-field" required 
       #userNameInfo="ngModel" [(ngModel)]="user.userName" name="userName" 
       type="text"  placeholder="User Name">
@@ -11,7 +15,7 @@
        User Name Missing</mat-error>
     </mat-form-field>
 
-    <mat-form-field color="warn">
+    <mat-form-field color="warn" fxFlex.gt-xs="40%">
       <input matInput class="input-field" required 
       #firstNameInfo="ngModel" [(ngModel)]="user.firstName" name="firstName" 
       type="text"  placeholder="First Name">
@@ -20,7 +24,7 @@
        First Name Missing</mat-error>
     </mat-form-field>
 
-    <mat-form-field color="warn">
+    <mat-form-field color="warn" fxFlex.gt-xs="40%">
       <input matInput class="input-field" required 
       #lastNameInfo="ngModel" [(ngModel)]="user.lastName" name="lastName" 
       type="text"  placeholder="Last Name">
@@ -29,7 +33,7 @@
         Last Name Missing</mat-error>
     </mat-form-field>
 
-    <mat-form-field color="warn">
+    <mat-form-field color="warn" fxFlex.gt-xs="40%">
       <input matInput class="input-field" required 
       #passwordInfo="ngModel" [(ngModel)]="user.password" name="password" 
       type="password"  placeholder="Password">
@@ -38,7 +42,7 @@
         Password Missing</mat-error>
     </mat-form-field>
 
-    <mat-form-field color="warn">
+    <mat-form-field color="warn" fxFlex.gt-xs="40%">
       <input matInput class="input-field" required 
       #passwordConfirmInfo="ngModel" [(ngModel)]="passwordConfirm" name="passwordConfirm" 
       type="password"  placeholder="Confirm Password">
@@ -47,7 +51,7 @@
         Confirm Password Missing</mat-error>
     </mat-form-field>
 
-      <mat-form-field color="warn">
+      <mat-form-field color="warn" fxFlex.gt-xs="40%">
         <input matInput class="input-field" required 
         #emailInfo="ngModel" [(ngModel)]="user.email" name="email" 
         type="email"  placeholder="Email">
@@ -56,7 +60,7 @@
           Email Missing</mat-error>
       </mat-form-field>
 
-      <mat-form-field color="warn">
+      <mat-form-field color="warn" fxFlex.gt-xs="40%">
         <input matInput class="input-field" required 
         #phoneInfo="ngModel" [(ngModel)]="user.phone" name="phone" 
         type="tel"  placeholder="Phone">
@@ -64,10 +68,11 @@
       <mat-error *ngIf="phoneInfo.errors?.required && phoneInfo.touched">
         Phone Missing</mat-error>
       </mat-form-field>
-  
-      <button mat-raised-button color="warn" 
+      <button mat-raised-button color="warn" fxFlex.gt-xs="40%" class="submitFormBtn"
       [disabled]="formInfo.form.invalid" (click)="userRegisterSubmitForm()">
         Register
       </button>
- 
+      <a fxFlex.gt-xs="100%" fxLayoutAlign.gt-xs="center"  class="loginLink" routerLink="/login">click her to login</a>
+
   </form>
+</div>
