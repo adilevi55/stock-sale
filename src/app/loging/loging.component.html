@@ -1,15 +1,22 @@
-<form #formInfo="ngForm">
+<div class="form-continer">
+<form #formInfo="ngForm" fxLayout="column" fxLayoutAlign="center">
+  <div fxLayoutAlign="center center">
+    <mat-icon   class="logoIconFirstIcon"  >extension icon</mat-icon>
+  </div>
 
+  <h1 fxLayoutAlign="center center" class="logInH1">LOG IN</h1>
     <mat-form-field>
+      <mat-icon matPrefix>person</mat-icon>
       <input matInput class="input-field" required 
       #userNameInfo="ngModel" [(ngModel)]="user.userName" name="userName" 
-      type="text"  placeholder="User Name">
-  
+      type="text"  placeholder="Username">
+
     <mat-error *ngIf="userNameInfo.errors?.required && userNameInfo.touched">
        User Name Missing</mat-error>
     </mat-form-field>
 
     <mat-form-field>
+      <mat-icon matPrefix>https</mat-icon>
       <input matInput class="input-field" required 
       #passwordInfo="ngModel" [(ngModel)]="user.password" name="password" 
       type="password"  placeholder="Password">
@@ -17,11 +24,15 @@
     <mat-error *ngIf="passwordInfo.errors?.required && passwordInfo.touched">
         Password Missing</mat-error>
     </mat-form-field>
+      <a class="registerLink" routerLink="/register">register</a>
+    <div fxLayoutAlign="center center">
 
-      <button mat-raised-button 
+      <button mat-raised-button color="primary" class="submitFormBtn"
       [disabled]="formInfo.form.invalid" (click)="userSubmitLoginForm()">
         Login
       </button>
+    </div>
+
  
   </form>
-  <a routerLink="/register">register</a>
+</div>
