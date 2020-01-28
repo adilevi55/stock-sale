@@ -55,18 +55,47 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         width:50%;
         margin: auto;
         }
+        form{
+            height:50vh;
+        }
+  }
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation:portrait)   {
+    .form-continer{
+        width:50%;
+        margin: auto;
+        }
+        form{
+            height:50vh;
+        }
   }
 
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .form-continer{
+        width:50%;
+        margin: auto;
+        }
+        form{
+            height:100vh;
+        }
+  }
+
+    
+ 
   @media only screen and (min-width: 1440px) and (max-width: 2560px){
     .form-continer{
         width:30%;
         margin: auto;
+        }
+        form{
+            height:80vh;
         }
   }
   @media only screen and (min-width: 2560px){
     form {
         font-size: 2rem;
         line-height: 2rem;
+        height:80vh;
+
     }
    .div-inputs-and-sub-button{
               width: 80%;
