@@ -2,11 +2,23 @@
     height: 100vh;
     width:100%;
 }
+.backgroun-img{
+    background-image: url('../../assets/images/login-form-body-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    top:0;
+    height: 110vh;
+    position: absolute;
+    z-index: -1;  
+}
+
 form{
-background: linear-gradient(to bottom, #0066ff 0%, #66ccff 99%);
-border-radius: 5px;
+background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+border-radius: 10px;
 margin:15px;
 height: 100vh;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 }
@@ -17,32 +29,62 @@ height: 100vh;
 .logoIconFirstIcon{
     background-color: #ffffff;
     color: black;
-    padding:2.1rem;
+    padding:2rem;
     border-radius: 50%;
     box-sizing: content-box;
-
+    font-size: 3rem;
+    height: 3rem;
+    width: 3rem;
 }
 .registerLink{
     text-decoration: none;
     display: inline-block;
     color:#ffffff;
-    font-size: 1.3rem;
     font-weight:600;
     margin-bottom: 10px;
-    cursor: pointer;
-
 }
 
-Try that
-
-::ng-deep .registerLink{
-    cursor: pointer !important; 
-    z-index: 500;
-}
 .submitFormBtn{
     display: block;
 }
-.submitFormBtn{
-    z-index:100;
-    cursor: not-allowed;
-}
+
+
+  
+@media only screen and (min-width: 600px) and (max-width: 1439px){
+    .form-continer{
+        width:50%;
+        margin: auto;
+        }
+  }
+
+  @media only screen and (min-width: 1440px) and (max-width: 2560px){
+    .form-continer{
+        width:30%;
+        margin: auto;
+        }
+  }
+  @media only screen and (min-width: 2560px){
+    form {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+   .div-inputs-and-sub-button{
+              width: 80%;
+          }
+    .submitFormBtn{
+        width: 50%;
+        height: 11vh;
+        font-size: 1.5rem;
+    }
+    .logoIconFirstIcon{
+        padding:4rem;
+        font-size: 5rem;
+        height: 5rem;
+        width: 5rem;
+
+    }
+    .logInH1{
+        font-size: 4rem;
+
+    }
+  }
