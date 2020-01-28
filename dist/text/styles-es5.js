@@ -23,7 +23,7 @@
 
   /***/
   function node_modulesAngularDevkitBuildAngularSrcAngularCliFilesPluginsRawCssLoaderJsNode_modulesPostcssLoaderSrcIndexJsSrcStylesCss(module, exports) {
-    module.exports = [[module.i, "* {\r\n    box-sizing: border-box;\r\n  }\r\nhtml, body {\r\n  height: 100vh;\r\n}\r\nbody {  \r\n    font-family: Roboto, \"Helvetica Neue\", sans-serif; \r\n    margin: 0;\r\n    padding: 0;\r\n    color: white;\r\n    background-color: black;\r\n\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksc0JBQXNCO0VBQ3hCO0FBQ0Y7RUFDRSxhQUFhO0FBQ2Y7QUFDQTtJQUNJLGlEQUFpRDtJQUNqRCxTQUFTO0lBQ1QsVUFBVTtJQUNWLFlBQVk7SUFDWix1QkFBdUI7O0FBRTNCIiwiZmlsZSI6InNyYy9zdHlsZXMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiKiB7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIH1cclxuaHRtbCwgYm9keSB7XHJcbiAgaGVpZ2h0OiAxMDB2aDtcclxufVxyXG5ib2R5IHsgIFxyXG4gICAgZm9udC1mYW1pbHk6IFJvYm90bywgXCJIZWx2ZXRpY2EgTmV1ZVwiLCBzYW5zLXNlcmlmOyBcclxuICAgIG1hcmdpbjogMDtcclxuICAgIHBhZGRpbmc6IDA7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcclxuXHJcbn1cclxuXHJcbiJdfQ== */", '', '']];
+    module.exports = [[module.i, "* {\r\n    box-sizing: border-box;\r\n  }\r\nhtml, body {\r\n  height: 100vh;\r\n}\r\nbody {  \r\n    font-family: Roboto, \"Helvetica Neue\", sans-serif; \r\n    margin: 0;\r\n    padding: 0;\r\n    color: white;\r\n    background-color: black;\r\n\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksc0JBQXNCO0VBQ3hCO0FBQ0Y7RUFDRSxhQUFhO0FBQ2Y7QUFFQTtJQUNJLGlEQUFpRDtJQUNqRCxTQUFTO0lBQ1QsVUFBVTtJQUNWLFlBQVk7SUFDWix1QkFBdUI7O0FBRTNCIiwiZmlsZSI6InNyYy9zdHlsZXMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiKiB7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gIH1cclxuaHRtbCwgYm9keSB7XHJcbiAgaGVpZ2h0OiAxMDB2aDtcclxufVxyXG5cclxuYm9keSB7ICBcclxuICAgIGZvbnQtZmFtaWx5OiBSb2JvdG8sIFwiSGVsdmV0aWNhIE5ldWVcIiwgc2Fucy1zZXJpZjsgXHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICBwYWRkaW5nOiAwO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcblxyXG59XHJcblxyXG4iXX0= */", '', '']];
     /***/
   },
 
@@ -400,11 +400,11 @@
   /***/
   function _(module, exports, __webpack_require__) {
     __webpack_require__(
-    /*! C:\Users\yoyot\Desktop\stock-sale\node_modules\@angular\material\prebuilt-themes\pink-bluegrey.css */
+    /*! C:\Users\adile\OneDrive\שולחן העבודה\תכנות\פרוייקטים\angular\stock-sale\node_modules\@angular\material\prebuilt-themes\pink-bluegrey.css */
     "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css");
 
     module.exports = __webpack_require__(
-    /*! C:\Users\yoyot\Desktop\stock-sale\src\styles.css */
+    /*! C:\Users\adile\OneDrive\שולחן העבודה\תכנות\פרוייקטים\angular\stock-sale\src\styles.css */
     "./src/styles.css");
     /***/
   }
