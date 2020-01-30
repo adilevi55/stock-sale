@@ -112,6 +112,8 @@ THE SOFTWARE.
 
 @angular/material/button
 
+@angular/material/card
+
 @angular/material/core
 
 @angular/material/dialog
@@ -119,6 +121,8 @@ THE SOFTWARE.
 @angular/material/form-field
 
 @angular/material/icon
+
+@angular/material/menu
 
 @angular/material/radio
 
