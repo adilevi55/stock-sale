@@ -1,0 +1,9 @@
+
+app-products-nav-phone {
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    background-color:#1976D2;
+    width:100%;
+
+}

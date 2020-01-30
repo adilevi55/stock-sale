@@ -1,0 +1,14 @@
+
+main{
+    position: relative;
+    top: 45px;
+}
+header{
+    position: relative;
+    background-color: #1976D2;
+}
+@media only screen and (min-width:600px){
+    main{
+        top: 0;
+    }
+}

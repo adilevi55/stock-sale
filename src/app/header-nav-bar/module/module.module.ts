@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HeaderNavBarComponent } from '../component/header-nav-bar.component';
 import { ShearModule } from 'src/app/shear.modul';
 import { RouterModule } from '@angular/router';
+import { ProductsNavDeskTopModule } from 'src/app/products/products-nav-desk-top/module/products-nav-desk-top.module';
+import { ProductsNavPhoneModule } from 'src/app/products/products-nav-phone/module/products-nav-phone.module';
 
 
 
@@ -10,7 +11,10 @@ import { RouterModule } from '@angular/router';
   declarations: [HeaderNavBarComponent],
   imports: [
     ShearModule,
-    RouterModule
+    RouterModule,
+    ProductsNavDeskTopModule,
+    ProductsNavPhoneModule
+
   ],
   exports: [HeaderNavBarComponent]
 })

@@ -39,7 +39,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
     UserAddProductModule,
     DeleteProductModule,
     ProductUpdateModule,
-    OverlayModule
+    OverlayModule,
+    HeaderNavBarModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInteceptor, multi: true }

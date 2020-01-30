@@ -7,8 +7,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    top:0;
-    height: 110vh;
+    top:-60px;
+    height: 130vh;
     position: absolute;
     z-index: -1;  
 }

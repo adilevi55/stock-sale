@@ -1,5 +1,6 @@
-.menu-container{
 
+.menu-container{
+    background-color:#00B0FF !important;
 }
 button{
     background:#00B0FF;
@@ -10,14 +11,7 @@ button{
 a{
     color:#ffffff;
     text-decoration:none;
+    background:#00B0FF;
+
 }
-.logoIconFirstIcon{
-    background-color: #ffffff;
-    color: black;
-    padding:1rem;
-    border-radius: 50%;
-    box-sizing: content-box;
-    font-size: 1.2rem;
-    height: 1.2rem;
-    width: 1.2rem;
-}
+

@@ -35,7 +35,6 @@ export class AuthenticationService {
     login(user: User) {
          this.http.post<User>('https://test-node-app0.herokuapp.com/api/authentication/login', user)
             .subscribe(newUser => {
-                console.log(newUser);
                 this.user$.next(newUser);
                 this.user = newUser;
                 this.authGuardService.userSingIn();
@@ -45,6 +44,7 @@ export class AuthenticationService {
     }
     loguot() {
         this.authGuardService.userLogout();
+        this.user = null;
         this.route.navigate(['/login']);
     }
 }
