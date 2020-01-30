@@ -1,0 +1,28 @@
+
+.nav-bar{
+    background:#1976D2;
+
+}
+a{
+    color:#ffffff;
+}
+.logoIconFirstIcon{
+    background-color: #ffffff;
+    color: black;
+    padding:1rem;
+    border-radius: 50%;
+    box-sizing: content-box;
+    font-size: 1.2rem;
+    height: 1.2rem;
+    width: 1.2rem;
+}
+button{
+    background:#00B0FF;
+}
+.menu-btn{
+    background:#1976D2;
+}
+.menu-link {
+    color:#ffffff;
+    text-decoration:none;
+}

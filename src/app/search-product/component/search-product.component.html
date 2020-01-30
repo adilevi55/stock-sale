@@ -1,20 +1,32 @@
-<p>search product works!</p>
-<form #formInfo="ngForm">
-    <mat-form-field>
-        <input matInput class="input-field" required 
+<form #formInfo="ngForm" fxLayout="row warp" fxLayoutGap.xs="10px"
+ fxLayoutAlign="center"
+ fxLayoutGap.gt-xs="20px">
+    <mat-form-field class="input-product"
+    fxFlex.xs="80%" 
+    fxFlex.gt-xs="40%" 
+    appearance="outline">
+    <mat-label>Search product</mat-label>
+        <input matInput  required 
         #searchValueInfo="ngModel" [(ngModel)]="searchValue" name="searchValue" 
-        type="text"  placeholder="search product">
+        type="text"  placeholder="Search product">
     
       <mat-error *ngIf="searchValueInfo.errors?.required && searchValueInfo.touched">
         Search Value Missing</mat-error>
       </mat-form-field>
 
-      <mat-radio-group [(ngModel)]="searchFiled" name="searchFiled" required>
-        <mat-radio-button class="example-margin" value="name">Name</mat-radio-button>
-        <mat-radio-button class="example-margin" value="location">Location</mat-radio-button>
+      <mat-radio-group [(ngModel)]="searchFiled" name="searchFiled" required
+      fxLayoutGap="15px" fxFlex.xs="80%" fxLayoutAlign="center"
+      fxFlex.lt-md="11%" 
+      fxFlex.gt-xs="8%" 
+      fxFlex.lg="7%" 
+      fxFlex.xl="4%" 
+      fxLayout.gt-xs="column">
+        <mat-radio-button value="name">Name</mat-radio-button>
+        <mat-radio-button value="location">Location</mat-radio-button>
       </mat-radio-group>
 
-    <button mat-raised-button 
+    <button mat-raised-button class="search-btn" fxFlex.xs="100%" 
+    fxFlex.gt-xs="20%" fxLayoutAlign="center"
     [disabled]="formInfo.form.invalid" (click)="searchProduct()">
       Search
     </button>

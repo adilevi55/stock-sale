@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common';
 import { AngualrMaterialModule } from './angular-material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductFormatModule } from './products/product-format/module/product-format.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { ProductsNavModule } from './products/products-nav/module/products-nav.module';
 
 @NgModule({
   declarations: [
   ],
   imports: [
     CommonModule,
-    FlexLayoutModule
   ],
   exports: [
     FormsModule,
@@ -18,7 +17,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ProductFormatModule,
     CommonModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    ProductsNavModule,
+
   ]
 })
 export class ShearModule { }

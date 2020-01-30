@@ -29,7 +29,25 @@
       <mat-error *ngIf="quantitiesInfo.errors?.required && quantitiesInfo.touched">
         Quantities Missing</mat-error>
       </mat-form-field>
+    
+      <mat-form-field>
+        <input matInput   required type="number"  placeholder="Price" min="1" 
+       #priceInfo="ngModel" [(ngModel)]="product.price" name="price">
+      <mat-error *ngIf="priceInfo.errors?.required && priceInfo.touched">
+        Price Missing</mat-error>
+      </mat-form-field>
 
+      <mat-form-field>
+        <textarea matInput   required type="text"  placeholder="Details"
+        minlength="6" maxlength="200"
+       #detailsInfo="ngModel" [(ngModel)]="product.details" name="details">
+       </textarea>
+      <mat-error *ngIf="detailsInfo.errors?.required && detailsInfo.touched">
+        Details Missing</mat-error>
+        <mat-error  *ngIf="detailsInfo.errors?.minlength && detailsInfo.touched">
+          Details too short.<br>
+          Details must be at least 6 characters</mat-error>
+      </mat-form-field>   
 
     <mat-form-field>
         <mat-label>Category</mat-label>

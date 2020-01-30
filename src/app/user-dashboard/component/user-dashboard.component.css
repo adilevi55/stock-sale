@@ -1,0 +1,9 @@
+main{
+    position: relative;
+    top: 45px;
+}
+@media only screen and (min-width:600px){
+    main{
+        top: 48px;
+    }
+}

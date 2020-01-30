@@ -12,6 +12,7 @@ export class SearchProductComponent implements OnInit {
   constructor(private route: Router) { }
 
   ngOnInit() {
+    this.searchFiled = 'name';
   }
 
   searchProduct() {

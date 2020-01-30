@@ -40,6 +40,8 @@ export class UserAddProductComponent implements OnInit, OnDestroy {
     this.productFormData.append('name', this.product.name);
     this.productFormData.append('location', this.product.location);
     this.productFormData.append('quantities', this.product.quantities.toString());
+    this.productFormData.append('price', this.product.price.toString());
+    this.productFormData.append('details', this.product.details);
     this.productFormData.append('user', this.user._id);
     this.productFormData.append('category', this.product.category.toString());
 

@@ -13,7 +13,6 @@ import { SearchProductModule } from 'src/app/search-product/module/search-produc
     imports: [
     ProductsRoutingModule,
     ShearModule,
-    ProductsNavModule,
     ProductsAllProductsModule,
     ProductsByCategoryModule,
     ProductsSearchModule,

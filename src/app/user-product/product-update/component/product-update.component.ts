@@ -5,7 +5,6 @@ import { CategoryService } from 'src/app/services/category.service';
 import { Observable, Subscription } from 'rxjs';
 import { Category } from 'src/app/modals/category';
 import { ProductsService } from 'src/app/services/products.service';
-import { Router } from '@angular/router';
 import { Product } from 'src/app/modals/product';
 
 
@@ -16,12 +15,11 @@ import { Product } from 'src/app/modals/product';
 })
 export class ProductUpdateComponent implements OnInit, OnDestroy {
 
-  public products$: Observable<Product[]>;
   public user: User;
   public displayedColumns: string[];
   public dataSource;
   public categories$: Observable<Category[]>;
-
+  public getProductsOb$: Subscription;
   public productEdd$: Subscription;
   public product: Product = new Product();
   public products: Product[];
@@ -32,18 +30,17 @@ export class ProductUpdateComponent implements OnInit, OnDestroy {
      private authenticationService: AuthenticationService,
      private productsService: ProductsService,
      private categoryService: CategoryService,
-     private productService: ProductsService,
-     private router: Router
+     private productService: ProductsService
    ) { }
 
 
    ngOnInit() {
-    this.displayedColumns = ['name', 'location', 'quantities', 'category', 'img', 'update'];
+    this.displayedColumns = ['name', 'location', 'quantities', 'category', 'price', 'details', 'img', 'update'];
     this.user = this.authenticationService.user;
     this.categories$ = this.categoryService.getAllCategories();
-
+    
     if (this.user) {
-        this.productsService.getAllUserProduts(this.user._id).subscribe(products => {
+      this.getProductsOb$ =  this.productsService.getAllUserProduts(this.user._id).subscribe(products => {
           this.products = products;
         });
   }
@@ -82,6 +79,8 @@ export class ProductUpdateComponent implements OnInit, OnDestroy {
       this.productsFormData[productIndexInProductsArray].append('name', this.products[productIndexInProductsArray].name);
       this.productsFormData[productIndexInProductsArray].append('location', this.products[productIndexInProductsArray].location);
       this.productsFormData[productIndexInProductsArray].append('quantities', this.products[productIndexInProductsArray].quantities.toString());
+      this.productsFormData[productIndexInProductsArray].append('price', this.products[productIndexInProductsArray].price.toString());
+      this.productsFormData[productIndexInProductsArray].append('details', this.products[productIndexInProductsArray].details);
       this.productsFormData[productIndexInProductsArray].append('user', this.user._id);
       this.productsFormData[productIndexInProductsArray].append('category', this.products[productIndexInProductsArray].category._id);
 
@@ -99,6 +98,9 @@ export class ProductUpdateComponent implements OnInit, OnDestroy {
    }
 
    ngOnDestroy(): void {
+    if (this.user) {
+    this.getProductsOb$.unsubscribe();
+    }
     if (this.productEdd$CheckSubscription === true) {
       this.productEdd$.unsubscribe();
     }

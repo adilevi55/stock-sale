@@ -1,14 +1,62 @@
 <div *ngIf="products; else productsLodding">
-    <div *ngIf="products.length > 0;else productsNotFound">
-        <div *ngFor="let p of products">
-            <p>Product Name: {{p.name}}</p>
-            <p>Location: {{p.location}}</p>
-            <p>Quantities: {{p.quantities}}</p>
-            <p>UserName: {{p.user.userName}}</p>
-            <a href="tel:{{p.user.phone}}">call user Phone</a>
-            <img src="{{p.img.url}}" width="100px">
-            <p>Category: {{p.category.name}}</p>
-            </div>
+    <div *ngIf="products.length > 0;else productsNotFound"
+        fxLayout.xs="column" fxLayoutAlign="center center"
+        fxLayout.gt-xs="row wrap" fxLayoutGap.gt-xs="10px"
+        >
+        
+        
+        <mat-card class="product-card" *ngFor="let p of products"
+         fxFlex="100%"
+         fxFlex.xs="60%"
+         fxFlex.sm="50%"
+         fxFlex.md="40%"
+         fxFlex.lg="30%"
+         fxFlex.xl="20%"
+         >
+
+                <img mat-card-image class="product-img"
+                src="{{p.img.url}}" alt="{{p.name}}">
+            <mat-card-content class="product-card-content">
+                <h2 class="product-name"> {{p.name}} </h2>
+                <h3 class="product-category"> {{p.category.name}} </h3>
+            
+                <div class="product-user-name-location-div" 
+                fxLayout="row" fxLayoutGap="1.1rem" fxLayoutAlign="center"
+                
+                > 
+                    <div>
+                        <h4>UserName</h4>
+                        <p>{{p.user.userName}}</p>
+                    </div>
+
+                    <div >
+                        <h4>Quantity</h4>
+                        <p>{{p.quantities}}</p>
+                    </div>
+                    <div>
+                        <h4>Price</h4>
+                        <p>{{p.price | currency}}</p>
+                    </div>
+                    <div>
+                        <h4>Location</h4>
+                        <div  class="locationP">
+                            <mat-icon> map</mat-icon>
+                            <span>{{p.location}}</span>
+                        </div>
+                    </div>
+                     
+                </div>
+
+
+             <div class="product-call-div-btn">
+                    <button class="locationP product-call-btn" mat-raised-button>
+                    <mat-icon class="mat-icon-call-user">call</mat-icon>
+                        <a href="tel:{{p.user.phone}}">Call {{p.user.userName}}</a>
+                    </button>
+                </div>    
+            </mat-card-content>
+            </mat-card>        
+
     </div> 
 </div>
 <ng-template #productsLodding>

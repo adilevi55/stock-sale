@@ -1,12 +1,2 @@
-  <nav mat-tab-nav-bar>
-    <a mat-tab-link 
-    routerLinkActive #rla="routerLinkActive"
-    [active]="rla.isActive"  routerLink="/products/all-products">All Products</a>
-    <a mat-tab-link
-       *ngFor="let link of navLinks$|async"
-       routerLink="/products/category/{{link.name}}"
-       routerLinkActive #rla="routerLinkActive"
-       [active]="rla.isActive">
-      {{link.name}}
-    </a>
-  </nav>
+<app-products-nav-desk-top fxShow fxHide.xs="true"></app-products-nav-desk-top>
+<app-products-nav-phone fxShow fxHide.gt-xs="true"></app-products-nav-phone>

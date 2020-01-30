@@ -6,7 +6,9 @@ export class Product {
         public _id?: string,
         public name?: string,
         public location?: string,
+        public details?: string,
         public quantities?: number,
+        public price?: number,
         public user?: User,
         public img?: {
             url: string,

@@ -1,0 +1,20 @@
+
+.search-btn{
+    background: #80D8FF;
+    margin-top:5px;
+}
+@media only screen and (max-width:700px){
+    mat-radio-group {
+        margin-bottom: 20;
+    }
+}
+@media only screen and (min-width:599px){
+    .input-product{
+        margin-top: 1.3rem;
+        }
+        .search-btn{
+            max-height: 66px;
+            margin-top: 1.3rem;
+        }
+}
+

@@ -1,0 +1,46 @@
+<nav mat-tab-nav-bar class="nav-bar">
+    <a mat-tab-link routerLink="/login"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive"
+    >
+        <mat-icon   class="logoIconFirstIcon">bubble_chart</mat-icon>
+    </a>
+    <a mat-tab-link 
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive"  routerLink="/products/all-products">All Products</a>
+    <a mat-tab-link
+       *ngFor="let link of navLinks$|async"
+       routerLink="/products/category/{{link.name}}"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{link.name}}
+    </a>
+    
+  <a mat-tab-link [matMenuTriggerFor]="userMenu" class="menu-btn" 
+  *ngIf="user.userName !== undefined" >
+    User
+  </a>
+  </nav>
+ <mat-menu #userMenu="matMenu" class="menu-container" 
+  >
+
+    <button mat-menu-item>
+      <a class="menu-link" routerLink='/user/products'>User Products</a>
+    </button>
+    <button mat-menu-item>
+      <a class="menu-link" routerLink='/user/add-product'>User Add Products</a>
+    </button>
+    <button mat-menu-item>
+      <a class="menu-link" routerLink='/user/delete-product'>User Delete Products</a>
+    </button>
+    <button mat-menu-item>
+      <a class="menu-link" routerLink='/user/update-product'>User Update Products</a>
+    </button>
+    <button mat-menu-item>
+      <a class="menu-link" routerLink='/user/dashboard'>User Dashboard</a>
+    </button>
+    <button mat-menu-item>
+      <a class="menu-link" (click)="logout()">Logout</a>
+    </button>
+  
+  </mat-menu>

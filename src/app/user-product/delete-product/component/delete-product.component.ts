@@ -24,7 +24,7 @@ export class DeleteProductComponent implements OnInit {
 
 
    ngOnInit() {
-    this.displayedColumns = ['name', 'location', 'quantities', 'category', 'img', 'delete'];
+    this.displayedColumns = ['name', 'location', 'quantities', 'price', 'details', 'category', 'img', 'delete'];
     this.user = this.authenticationService.user;
     if (this.user) {
         this.products$ = this.productsService.getAllUserProduts(this.user._id);

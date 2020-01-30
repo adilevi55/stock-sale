@@ -1,0 +1,48 @@
+
+.product-card{
+    background-color: #E1F5FE;
+    color:#000000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Oswald', sans-serif;
+    margin-bottom:10px;
+
+}
+.product-img{
+
+}
+.product-card-content{
+    color: #212121;
+}
+
+.product-name{
+    text-align: center;
+    font-family: 'Bowlby One SC', cursive;
+    font-weight: 700;
+    font-size:2rem;
+}
+.product-category{
+    font-weight: 700;
+    font-size:1.1rem;
+}
+.product-user-name-location-div{
+
+}
+.locationP{
+    display:flex;
+    align-items: center;
+}
+.product-call-div-btn{
+    display: flex;
+    justify-content: center;
+}
+.product-call-btn{
+    background: #80D8FF;
+}
+.product-call-btn a {
+    text-decoration: none;
+    color: #00B0FF;
+}
+.mat-icon-call-user{
+    color:#0D47A1;
+    margin-right: 5px;
+}

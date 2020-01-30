@@ -1,0 +1,50 @@
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-btn" >
+    <mat-icon>menu</mat-icon>
+  </button>
+  
+  <mat-menu #menu="matMenu" class="menu-container">
+    <button mat-menu-item>
+      <a routerLink="/products/all-products">All Products</a>
+    </button>
+    <button mat-menu-item
+    *ngFor="let link of navLinks$|async">
+
+      <a routerLink="/products/category/{{link.name}}"
+     >
+     {{link.name}}
+   </a>
+    </button>
+
+    <button mat-menu-item [matMenuTriggerFor]="userMenu" class="menu-btn"
+    *ngIf="user.userName !== undefined" >
+      User
+    </button>
+  </mat-menu>
+
+  <mat-menu #userMenu="matMenu" class="menu-container" 
+  >
+
+    <button mat-menu-item>
+      <a routerLink='/user/products'>User Products</a>
+    </button>
+    <button mat-menu-item>
+      <a routerLink='/user/add-product'>User Add Products</a>
+    </button>
+    <button mat-menu-item>
+      <a routerLink='/user/delete-product'>User Delete Products</a>
+    </button>
+    <button mat-menu-item>
+      <a routerLink='/user/update-product'>User Update Products</a>
+    </button>
+    <button mat-menu-item>
+      <a routerLink='/user/dashboard'>User Dashboard</a>
+    </button>
+    <button mat-menu-item>
+      <a (click)="logout()">Logout</a>
+    </button>
+  
+  </mat-menu>
+
+
+

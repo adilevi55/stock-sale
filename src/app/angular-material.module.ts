@@ -8,6 +8,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatCardModule} from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   exports: [
@@ -20,6 +24,10 @@ import {MatIconModule} from '@angular/material/icon';
       MatSelectModule,
       MatTableModule,
       MatIconModule,
+      MatToolbarModule,
+      FlexLayoutModule,
+      MatCardModule,
+      MatMenuModule
     ]
 })
 export class AngualrMaterialModule { }

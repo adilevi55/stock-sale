@@ -1,5 +1,5 @@
-<div *ngIf="(products$|async) as products; else productLodding"> 
-  <div *ngIf="products.length > 0; else notFoundMessage">
+  <div *ngIf="products">
+  <div *ngIf="products[0] != undefined; else notFoundMessage">
 <table mat-table [dataSource]="products" class="mat-elevation-z8">
     
     <ng-container matColumnDef="name">
@@ -33,11 +33,38 @@
       <th mat-header-cell *matHeaderCellDef> Quantities </th>
       <td mat-cell *matCellDef="let element;let i=index"> 
         <mat-form-field>
-      <input matInput   type="text" minlength="6" maxlength="15" 
+      <input matInput   type="number" min="1"
       placeholder="Product Quantities" id="quantitiesInfo"  name="quantities"
       [ngModel]="element.quantities"
       name="quantities"
        [(ngModel)]="products[i].quantities">
+    </mat-form-field>       
+        </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element;let i=index"> 
+        <mat-form-field>
+      <input matInput   type="number" min="1"
+      placeholder="Product Price" id="priceInfo"  name="price"
+      [ngModel]="element.price"
+      name="price"
+       [(ngModel)]="products[i].price">
+    </mat-form-field>       
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="details">
+      <th mat-header-cell *matHeaderCellDef> Details </th>
+      <td mat-cell *matCellDef="let element;let i=index"> 
+        <mat-form-field>
+      <textarea matInput   type="text" minlength="6" maxlength="200" 
+      placeholder="Product Details" id="detailsInfo"  name="details"
+      [ngModel]="element.details"
+      name="details"
+       [(ngModel)]="products[i].details">
+      </textarea>
     </mat-form-field>       
         </td>
     </ng-container>
@@ -87,7 +114,4 @@
 </div>
   <ng-template #notFoundMessage >
     <h1>Products Not Found</h1>
-    </ng-template>
-  <ng-template #productLodding >
-    <h1>Products Lodding</h1>
     </ng-template>
