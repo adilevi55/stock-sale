@@ -16,7 +16,7 @@ const routes: Routes = [
   .then(m => m.UserProductsModule), canActivate: [AuthGuardService]
   },
   {path: 'user/add-product', loadChildren: () => import('./user-product/user-add-product/module/user-add-product.module')
-  .then(m => m.UserAddProductModule), canActivate: [AuthGuardService]
+  .then(m => m.UserAddProductModule)//, canActivate: [AuthGuardService]
   },
   {path: 'user/delete-product', loadChildren: () => import('./user-product/delete-product/module/delete-product.module')
   .then(m => m.DeleteProductModule), canActivate: [AuthGuardService]

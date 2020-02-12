@@ -1,0 +1,16 @@
+.add-product-card{
+    /* background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%); */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgb(255, 255, 255), 0 6px 20px 0 rgb(255, 255, 255);
+    border-radius:16px;
+    padding:1.2rem;
+    margin: 1.2rem;
+    font-family: 'Bowlby One SC', cursive;
+}
+.add-img-icon{
+    /* font-size:4rem; */
+    font-size:20vh;
+}
+.img-user-healp{
+    color:#80D8FF;
+}

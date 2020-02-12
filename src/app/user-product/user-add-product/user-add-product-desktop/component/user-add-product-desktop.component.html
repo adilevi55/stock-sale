@@ -1,0 +1,115 @@
+<div class="background-div"></div>
+<div class="add-product-card">
+  <h1>Add Your Product</h1>
+  <form #formInfo="ngForm" fxLayout="row" fxLayoutGap="5px" >
+      <div fxLayout="row wrap" fxLayoutAlign="center" 
+      fxLayoutGap="5px" fxFlex="50%">
+      <mat-form-field appearance="outline" fxFlex="43%">
+          <mat-label>Name</mat-label>
+        <input matInput   required type="text"  placeholder="Name" 
+        minlength="6" maxlength="15"
+       #nameInfo="ngModel" [(ngModel)]="product.name" name="name">
+      <mat-error class="" *ngIf="nameInfo.errors?.required && nameInfo.touched">
+          Product Name Missing</mat-error>
+      <mat-error  *ngIf="nameInfo.errors?.minlength && nameInfo.touched">
+        Product name too short.<br>
+        Product name must be at least 6 characters</mat-error>
+      </mat-form-field>
+  
+  
+       <mat-form-field appearance="outline" fxFlex="43%">
+          <mat-label>Location</mat-label>
+          <input matInput   required type="text"  placeholder="Location"
+          minlength="6" maxlength="15"
+         #locationInfo="ngModel" [(ngModel)]="product.location" name="location">
+        <mat-error *ngIf="locationInfo.errors?.required && locationInfo.touched">
+          Location Missing</mat-error>
+          <mat-error  *ngIf="locationInfo.errors?.minlength && locationInfo.touched">
+            Location too short.<br>
+            Location must be at least 6 characters</mat-error>
+        </mat-form-field>   
+  
+        <mat-form-field appearance="outline" fxFlex="43%">
+          <mat-label>Quantity</mat-label>
+          <input matInput   required type="number"  placeholder="Quantities" min="1" 
+         #quantitiesInfo="ngModel" [(ngModel)]="product.quantities" name="quantities">
+        <mat-error *ngIf="quantitiesInfo.errors?.required && quantitiesInfo.touched">
+          Quantities Missing</mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline" fxFlex="43">
+          <mat-label>Price</mat-label>
+          <input matInput   required type="number"  placeholder="Price" min="1" 
+         #priceInfo="ngModel" [(ngModel)]="product.price" name="price">
+        <mat-error *ngIf="priceInfo.errors?.required && priceInfo.touched">
+          Price Missing</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" fxFlex="90%">
+          <mat-label>Category</mat-label>
+          <mat-select  
+          required type="text" 
+          #categoryInfo="ngModel" [(ngModel)]="product.category" name="category">
+            <mat-option *ngFor="let c of categories$|async" [value]="c._id">
+              {{c.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="categoryInfo.errors?.required && categoryInfo.touched">
+              Category Missing</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" fxFlex="90%">
+          <mat-label>Details</mat-label>
+          <textarea matInput   required type="text"  placeholder="Details"
+          minlength="6" maxlength="200"
+         #detailsInfo="ngModel" [(ngModel)]="product.details" name="details">
+         </textarea>
+        <mat-error *ngIf="detailsInfo.errors?.required && detailsInfo.touched">
+          Details Missing</mat-error>
+          <mat-error  *ngIf="detailsInfo.errors?.minlength && detailsInfo.touched">
+            Details too short.<br>
+            Details must be at least 6 characters</mat-error>
+        </mat-form-field>   
+        <button mat-raised-button fxFlex="90%"
+        type="submit" 
+        [disabled]="formInfo.form.invalid"
+        (click)="userAddingProduct()">
+          Add Product
+        </button>
+  
+        </div>
+
+          <input required
+          #imgInfo="ngModel" [(ngModel)]="product.img" name="img"
+          style="display:none"
+          >
+          <input  style="display:none"
+          type="file" (change)="onFileSelected($event)"  accept='image/*'
+          #imgUploader>
+           <div fxLayoutAlign="center center" fxLayout="column" fxFlex="50%">
+               <p *ngIf="imgURL" class="img-user-healp">
+                  To upload another image, click on the image you have already uploaded
+              </p>
+         <img         matTooltip="Info about the action"
+         matTooltipPosition="above"
+         [src]="imgURL" height="200" *ngIf="imgURL;else imgNotUpload"  (click)="imgUploader.click()">
+           
+           <ng-template #imgNotUpload>
+            <div (click)="imgUploader.click()">
+              <i class="material-icons add-img-icon">
+                  add_photo_alternate
+                  </i>
+            </div>
+           </ng-template>
+  
+           <div *ngIf="messageFileNoImg">
+           <p>{{messageFileNoImg}}</p>
+           </div>
+        <div *ngIf="imgInfo.errors?.required && imgInfo.touched">
+          Image Missing
+      </div>
+      </div>
+  
+       
+    </form>
+    </div>
