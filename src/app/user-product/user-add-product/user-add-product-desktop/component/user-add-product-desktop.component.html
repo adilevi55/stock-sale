@@ -1,4 +1,7 @@
 <div class="background-div"></div>
+<div class="card-container"
+fxLayoutAlign="center center">
+
 <div class="add-product-card">
   <h1>Add Your Product</h1>
   <form #formInfo="ngForm" fxLayout="row" fxLayoutGap="5px" >
@@ -71,7 +74,7 @@
             Details must be at least 6 characters</mat-error>
         </mat-form-field>   
         <button mat-raised-button fxFlex="90%"
-        type="submit" 
+        type="submit" class="submitFormBtn"
         [disabled]="formInfo.form.invalid"
         (click)="userAddingProduct()">
           Add Product
@@ -109,7 +112,8 @@
           Image Missing
       </div>
       </div>
-  
+
        
     </form>
     </div>
+  </div>

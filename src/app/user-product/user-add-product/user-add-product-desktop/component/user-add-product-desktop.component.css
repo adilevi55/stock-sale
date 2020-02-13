@@ -1,7 +1,3 @@
-mat-error{
-    color: red;
-    background-color: #ffffff;
-  }
   .background-div{
     background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
     position: absolute;
@@ -10,9 +6,12 @@ mat-error{
     height: 100vh;
     z-index: -1;
   }
+  .card-container{
+    width:100%;
+    height:100%;
+  }
 
   .add-product-card{
-    /*  */
     background-color: #ffffff;
     box-shadow: 0 4px 8px 0 rgb(255, 255, 255), 0 6px 20px 0 rgb(255, 255, 255);
     border-radius:16px;
@@ -21,9 +20,23 @@ mat-error{
     font-family: 'Bowlby One SC', cursive;
 }
 .add-img-icon{
-    /* font-size:4rem; */
     font-size:20vh;
 }
 .img-user-healp{
     color:#80D8FF;
+}
+
+@media only screen and (min-width: 2560px) {
+  form{
+      font-size: 2rem;
+      line-height: 2rem;
+      padding:2rem;
+  }
+  .submitFormBtn{
+      height: 7vh;
+      font-size: 1.5rem;
+  }
+  .add-img-icon{
+    font-size:30vh;
+}
 }
