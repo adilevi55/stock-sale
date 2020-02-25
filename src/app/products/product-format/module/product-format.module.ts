@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { ProductFormatComponent } from '../component/product-format.component';
 import { CommonModule } from '@angular/common';
 import { AngualrMaterialModule } from 'src/app/angular-material.module';
+import { PaginatorModule } from 'src/app/paginator/module/paginator.module';
 
 
 
@@ -9,7 +10,8 @@ import { AngualrMaterialModule } from 'src/app/angular-material.module';
   declarations: [ProductFormatComponent],
   imports: [
     CommonModule,
-    AngualrMaterialModule
+    AngualrMaterialModule,
+    PaginatorModule
   ],
   exports: [ProductFormatComponent]
 })

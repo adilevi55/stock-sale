@@ -17,7 +17,9 @@
 .mat-table .mat-cell{
   padding: 0 !important;
 }
-
+.delete-icon{
+  font-size:300%;
+}
 @media screen and (max-width: 600px) {
 
   .mat-table {
@@ -43,6 +45,7 @@
   .mat-table .mat-row {
     border-bottom: 5px solid #ddd;
     display: block;
+    margin-bottom: -45px;
   }
 
   .mat-table .mat-cell {
@@ -65,5 +68,6 @@
   .mat-table .mat-cell:last-child {
     border-bottom: 0;
   }
+
 
 }

@@ -6,18 +6,17 @@ import { Observable, Subscription } from 'rxjs';
 import { Category } from 'src/app/modals/category';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/modals/product';
-
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-product-update',
   templateUrl: './product-update.component.html',
   styleUrls: ['./product-update.component.css']
 })
-export class ProductUpdateComponent implements OnInit, OnDestroy {
+export class ProductUpdateComponent implements OnInit, OnDestroy  {
 
   public user: User;
   public displayedColumns: string[];
-  public dataSource;
   public categories$: Observable<Category[]>;
   public getProductsOb$: Subscription;
   public productEdd$: Subscription;
@@ -26,6 +25,8 @@ export class ProductUpdateComponent implements OnInit, OnDestroy {
   public productsFormData: FormData[] = [];
   public productEdd$CheckSubscription = false;
   public imgURL = [];
+  public dataSource: MatTableDataSource<Product>;
+
    constructor(
      private authenticationService: AuthenticationService,
      private productsService: ProductsService,
@@ -33,26 +34,24 @@ export class ProductUpdateComponent implements OnInit, OnDestroy {
      private productService: ProductsService
    ) { }
 
-
    ngOnInit() {
     this.displayedColumns = ['name', 'location', 'quantities', 'category', 'price', 'details', 'img', 'update'];
     this.user = this.authenticationService.user;
     this.categories$ = this.categoryService.getAllCategories();
-    
+
     if (this.user) {
       this.getProductsOb$ =  this.productsService.getAllUserProduts(this.user._id).subscribe(products => {
-          this.products = products;
+        this.products = products;
+        this.dataSource = new MatTableDataSource<Product>(products);
         });
   }
-
    }
 
 
-
   onFileSelected(event, productArrayIndex) {
-    if(this.productsFormData[productArrayIndex] === undefined){
+    if (this.productsFormData[productArrayIndex] === undefined) {
       this.productsFormData[productArrayIndex] = new FormData();
-      console.log(productArrayIndex)
+      console.log(productArrayIndex);
     }
     this.productsFormData[productArrayIndex].append('img', event.target.files[0], event.target.files[0].name);
 
@@ -62,36 +61,36 @@ export class ProductUpdateComponent implements OnInit, OnDestroy {
       this.imgURL[productArrayIndex] = reader.result;
     };
   }
-  onSubmit(event){
-    console.log(event)
+  onSubmit(event) {
+    console.log(event);
   }
-   updateProduct(productId,productIndexInProductsArray) {
-      console.log(this.products[productIndexInProductsArray])
-      if(this.products[productIndexInProductsArray].name.length < 6||
+   updateProduct(productId, productIndexInProductsArray) {
+      console.log(this.products[productIndexInProductsArray]);
+      if (this.products[productIndexInProductsArray].name.length < 6 ||
         this.products[productIndexInProductsArray].location.length < 6
-        ){
-          alert("Prodcut location and Product name must be at least 6 characters")
-        }else{
+        ) {
+          alert('Prodcut location and Product name must be at least 6 characters');
+        } else {
           console.log(this.productsFormData);
-          if(this.productsFormData[productIndexInProductsArray] === undefined){
+          if (this.productsFormData[productIndexInProductsArray] === undefined) {
             this.productsFormData[productIndexInProductsArray] = new FormData();
           }
-      this.productsFormData[productIndexInProductsArray].append('name', this.products[productIndexInProductsArray].name);
-      this.productsFormData[productIndexInProductsArray].append('location', this.products[productIndexInProductsArray].location);
-      this.productsFormData[productIndexInProductsArray].append('quantities', this.products[productIndexInProductsArray].quantities.toString());
-      this.productsFormData[productIndexInProductsArray].append('price', this.products[productIndexInProductsArray].price.toString());
-      this.productsFormData[productIndexInProductsArray].append('details', this.products[productIndexInProductsArray].details);
-      this.productsFormData[productIndexInProductsArray].append('user', this.user._id);
-      this.productsFormData[productIndexInProductsArray].append('category', this.products[productIndexInProductsArray].category._id);
+          this.productsFormData[productIndexInProductsArray].append('name', this.products[productIndexInProductsArray].name);
+          this.productsFormData[productIndexInProductsArray].append('location', this.products[productIndexInProductsArray].location);
+          this.productsFormData[productIndexInProductsArray].append('quantities', this.products[productIndexInProductsArray].quantities.toString());
+          this.productsFormData[productIndexInProductsArray].append('price', this.products[productIndexInProductsArray].price.toString());
+          this.productsFormData[productIndexInProductsArray].append('details', this.products[productIndexInProductsArray].details);
+          this.productsFormData[productIndexInProductsArray].append('user', this.user._id);
+          this.productsFormData[productIndexInProductsArray].append('category', this.products[productIndexInProductsArray].category._id);
 
-      this.productEdd$ = this.productService.updateProduct(this.productsFormData[productIndexInProductsArray],productId).subscribe(product => {
+          this.productEdd$ = this.productService.updateProduct(this.productsFormData[productIndexInProductsArray], productId).subscribe(product => {
         this.productEdd$CheckSubscription = true;
         alert(`congratulation ${this.user.userName} your product ${product.name} is successfully updated`);
         console.log(this.products[productIndexInProductsArray]);
         console.log(this.productsFormData[productIndexInProductsArray]);
         console.log(this.productsFormData);
       });
-      this.productsFormData[productIndexInProductsArray] = new FormData();
+          this.productsFormData[productIndexInProductsArray] = new FormData();
 
         }
 
@@ -105,4 +104,5 @@ export class ProductUpdateComponent implements OnInit, OnDestroy {
       this.productEdd$.unsubscribe();
     }
   }
+
   }

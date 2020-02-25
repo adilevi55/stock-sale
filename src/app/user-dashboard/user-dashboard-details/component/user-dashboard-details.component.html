@@ -1,6 +1,13 @@
-<form #formInfo="ngForm">
-    
-    <mat-form-field>
+<div class="background-div"></div>
+<div class="card-container"
+fxLayoutAlign="center center">
+
+<form #formInfo="ngForm"
+fxLayout.xs="column" fxLayoutAlign="center center"
+fxLayout.gt-xs="row wrap" fxLayoutGap.gt-xs="10px">
+<h1 fxFlex="100%">Update Your User Details </h1>
+    <mat-form-field appearance="outline" fxFlex="100%">
+        <mat-label>First name</mat-label>
         <input matInput class="input-field"  minlength="3" maxlength="15"
         #firstNameInfo="ngModel" [(ngModel)]="user.firstName" name="firstName" 
         type="text"  placeholder="First Name">
@@ -10,7 +17,8 @@
         </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline" fxFlex="100%">
+        <mat-label>Last name</mat-label>
         <input matInput class="input-field"  minlength="3" maxlength="15"
         #lastNameInfo="ngModel" [(ngModel)]="user.lastName" name="lastName" 
         type="text"  placeholder="Last Name">
@@ -20,13 +28,16 @@
         </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline" fxFlex="100%">
+        <mat-label>Phone number</mat-label>
         <input matInput class="input-field"  minlength="3" maxlength="15"
         #phoneInfo="ngModel" [(ngModel)]="user.phone" name="phone" 
         type="tel"  placeholder="Phone Number">
     </mat-form-field>
 
-    <button (click)="userUpdateDetails()"
+    <button (click)="userUpdateDetails()" fxFlex="100%"
     [disabled]="formInfo.invalid"
+    mat-raised-button color="warn"
     >Update User Details</button>
 </form>
+</div>

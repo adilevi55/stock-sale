@@ -1,6 +1,6 @@
   <div *ngIf="products">
   <div *ngIf="products[0] != undefined; else notFoundMessage">
-<mat-table [dataSource]="products" class="mat-elevation-z8">
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>

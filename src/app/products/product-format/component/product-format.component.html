@@ -6,11 +6,9 @@
         
         
         <mat-card class="product-card" *ngFor="let p of products"
-         fxFlex="100%"
-         fxFlex.xs="60%"
-         fxFlex.sm="50%"
-         fxFlex.md="40%"
-         fxFlex.lg="30%"
+         fxFlex.sm="40%"
+         fxFlex.md="30%"
+         fxFlex.lg="20%"
          fxFlex.xl="20%"
          >
 
@@ -39,8 +37,8 @@
                     </div>
                     <div>
                         <h4>Location</h4>
-                        <div  class="locationP">
-                            <mat-icon> map</mat-icon>
+                        <div  class="mat-icon-div">
+                            <mat-icon class="map-icon"> map</mat-icon>
                             <span>{{p.location}}</span>
                         </div>
                     </div>
@@ -49,14 +47,13 @@
 
 
              <div class="product-call-div-btn">
-                    <button class="locationP product-call-btn" mat-raised-button>
+                    <button class="mat-icon-div product-call-btn" mat-raised-button>
                     <mat-icon class="mat-icon-call-user">call</mat-icon>
                         <a href="tel:{{p.user.phone}}">Call {{p.user.userName}}</a>
                     </button>
                 </div>    
             </mat-card-content>
             </mat-card>        
-
     </div> 
 </div>
 <ng-template #productsLodding>

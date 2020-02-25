@@ -42,6 +42,7 @@
   .mat-table .mat-row {
     border-bottom: 5px solid #ddd;
     display: block;
+    margin-bottom: -45px;
   }
 
   .mat-table .mat-cell {

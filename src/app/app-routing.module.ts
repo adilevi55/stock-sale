@@ -10,13 +10,13 @@ const routes: Routes = [
   {path: 'register', loadChildren: () => import('./register/module/register/register.module')
   .then(m => m.RegisterModule)},
   {path: 'products', loadChildren: () => import('./products/module/products.module')
-  .then(m => m.ProductsModule), canActivate: [AuthGuardService]
+  .then(m => m.ProductsModule) //, canActivate: [AuthGuardService]
   },
   {path: 'user/products', loadChildren: () => import('./user-product/user-products/module/user-products.module')
   .then(m => m.UserProductsModule), canActivate: [AuthGuardService]
   },
   {path: 'user/add-product', loadChildren: () => import('./user-product/user-add-product/module/user-add-product.module')
-  .then(m => m.UserAddProductModule)//, canActivate: [AuthGuardService]
+  .then(m => m.UserAddProductModule), canActivate: [AuthGuardService]
   },
   {path: 'user/delete-product', loadChildren: () => import('./user-product/delete-product/module/delete-product.module')
   .then(m => m.DeleteProductModule), canActivate: [AuthGuardService]

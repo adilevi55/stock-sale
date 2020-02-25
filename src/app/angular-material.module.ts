@@ -13,6 +13,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   exports: [
@@ -29,7 +30,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
       FlexLayoutModule,
       MatCardModule,
       MatMenuModule,
-      MatTooltipModule
+      MatTooltipModule,
+      MatPaginatorModule
     ]
 })
 export class AngualrMaterialModule { }
