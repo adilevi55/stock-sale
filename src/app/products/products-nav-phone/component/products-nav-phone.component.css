@@ -12,6 +12,13 @@ a{
     color:#ffffff;
     text-decoration:none;
     background:#00B0FF;
-
+}
+span{
+    color:#ffffff;
+    font-family: 'Bowlby One SC', cursive;
+    margin-left: 10px;
+}
+.mat-icon{
+    color:#ffffff;
 }
 

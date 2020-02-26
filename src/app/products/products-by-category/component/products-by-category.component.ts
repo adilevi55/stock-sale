@@ -20,10 +20,8 @@ export class ProductsByCategoryComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.route$ = this.router.params.subscribe((params: Params) => {
-      console.log(params.categoryName);
       this.categoryService.getCategoryByName(params.categoryName)
         .subscribe(categoy => {
-          console.log(categoy._id);
           this.products$ = this.productsService.getProductsByCategory(categoy._id);
         });
     });

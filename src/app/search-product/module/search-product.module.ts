@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShearModule } from 'src/app/shear.modul';
 import { SearchProductComponent } from '../component/search-product.component';
+import { AngualrMaterialModule } from 'src/app/angular-material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,9 @@ import { SearchProductComponent } from '../component/search-product.component';
   declarations: [SearchProductComponent],
   imports: [
     CommonModule,
-    ShearModule
+    AngualrMaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     SearchProductComponent

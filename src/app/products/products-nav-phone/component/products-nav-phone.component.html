@@ -2,15 +2,17 @@
   <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-btn" >
     <mat-icon>menu</mat-icon>
   </button>
-  
+  <span>{{pageTitel}}</span>
+  <mat-icon>serch</mat-icon>
   <mat-menu #menu="matMenu" class="menu-container">
     <button mat-menu-item>
-      <a routerLink="/products/all-products">All Products</a>
+      <a routerLink="/products/all-products" (click)="changePageTitel('All Products')">All Products</a>
     </button>
     <button mat-menu-item
     *ngFor="let link of navLinks$|async">
 
       <a routerLink="/products/category/{{link.name}}"
+      (click)="changePageTitel(link.name)"
      >
      {{link.name}}
    </a>
@@ -26,19 +28,29 @@
   >
 
     <button mat-menu-item>
-      <a routerLink='/user/products'>User Products</a>
+      <a routerLink='/user/products'
+      (click)="changePageTitel('User Products')"
+      >User Products</a>
     </button>
     <button mat-menu-item>
-      <a routerLink='/user/add-product'>User Add Products</a>
+      <a routerLink='/user/add-product'
+      (click)="changePageTitel('User Add Products')"
+      >User Add Products</a>
     </button>
     <button mat-menu-item>
-      <a routerLink='/user/delete-product'>User Delete Products</a>
+      <a routerLink='/user/delete-product'
+      (click)="changePageTitel('User Delete Products')"
+      >User Delete Products</a>
     </button>
     <button mat-menu-item>
-      <a routerLink='/user/update-product'>User Update Products</a>
+      <a routerLink='/user/update-product'
+      (click)="changePageTitel('User Update Products')"
+      >User Update Products</a>
     </button>
     <button mat-menu-item>
-      <a routerLink='/user/dashboard'>User Dashboard</a>
+      <a routerLink='/user/dashboard'
+      (click)="changePageTitel('User Dashboard')"
+      >User Dashboard</a>
     </button>
     <button mat-menu-item>
       <a (click)="logout()">Logout</a>

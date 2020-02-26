@@ -13,6 +13,8 @@ export class ProductsNavPhoneComponent implements OnInit, OnDestroy {
   public navLinks$: Observable<Category[]>;
   public user$: Subscription;
   public user: User;
+  public pageTitel: string;
+
   constructor(
     private categoryService: CategoryService,
     private authenticationService: AuthenticationService
@@ -21,8 +23,9 @@ export class ProductsNavPhoneComponent implements OnInit, OnDestroy {
       this.navLinks$ = this.categoryService.getAllCategories();
       this.user$ = this.authenticationService.getUser().subscribe(user => {
         this.user = user;
-    })
-  }
+        this.pageTitel = 'All Products';
+    });
+    }
 
   ngOnDestroy(): void {
     this.user$.unsubscribe();
@@ -30,5 +33,7 @@ export class ProductsNavPhoneComponent implements OnInit, OnDestroy {
   logout() {
     this.authenticationService.loguot();
   }
-
+  changePageTitel(pageTitle: string) {
+    this.pageTitel = pageTitle;
+  }
 }

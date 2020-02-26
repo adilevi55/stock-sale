@@ -51,7 +51,6 @@ export class ProductUpdateComponent implements OnInit, OnDestroy  {
   onFileSelected(event, productArrayIndex) {
     if (this.productsFormData[productArrayIndex] === undefined) {
       this.productsFormData[productArrayIndex] = new FormData();
-      console.log(productArrayIndex);
     }
     this.productsFormData[productArrayIndex].append('img', event.target.files[0], event.target.files[0].name);
 
@@ -61,17 +60,12 @@ export class ProductUpdateComponent implements OnInit, OnDestroy  {
       this.imgURL[productArrayIndex] = reader.result;
     };
   }
-  onSubmit(event) {
-    console.log(event);
-  }
    updateProduct(productId, productIndexInProductsArray) {
-      console.log(this.products[productIndexInProductsArray]);
       if (this.products[productIndexInProductsArray].name.length < 6 ||
         this.products[productIndexInProductsArray].location.length < 6
         ) {
           alert('Prodcut location and Product name must be at least 6 characters');
         } else {
-          console.log(this.productsFormData);
           if (this.productsFormData[productIndexInProductsArray] === undefined) {
             this.productsFormData[productIndexInProductsArray] = new FormData();
           }
@@ -86,14 +80,9 @@ export class ProductUpdateComponent implements OnInit, OnDestroy  {
           this.productEdd$ = this.productService.updateProduct(this.productsFormData[productIndexInProductsArray], productId).subscribe(product => {
         this.productEdd$CheckSubscription = true;
         alert(`congratulation ${this.user.userName} your product ${product.name} is successfully updated`);
-        console.log(this.products[productIndexInProductsArray]);
-        console.log(this.productsFormData[productIndexInProductsArray]);
-        console.log(this.productsFormData);
-      });
+    });
           this.productsFormData[productIndexInProductsArray] = new FormData();
-
         }
-
    }
 
    ngOnDestroy(): void {
@@ -105,4 +94,4 @@ export class ProductUpdateComponent implements OnInit, OnDestroy  {
     }
   }
 
-  }
+}
